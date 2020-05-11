@@ -6,12 +6,12 @@ const apiUrl = "https://api.imgflip.com/get_memes"
 
 
 
-export default function Meme (datas) {
+export default function Meme () {
  const [fetchData, fetchSet] = useState([])
 
  useEffect(() =>{
      axios.get(apiUrl)
-     .then(res => fetchSet(res.data.data.memes))
+     .then(res => fetchSet(res.data.data.memes[0]))
      .catch(err => console.log(err))
  },[]);
  
@@ -20,7 +20,7 @@ export default function Meme (datas) {
 
 return (
 <div className="Fetched">
-{fetchData.map(elements => <div><img src={elements.url}></img></div>)}
+<img src={fetchData.url}></img>
 </div>
 
 )}
