@@ -1,8 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Meme from './meme'
 
-export default function (){
 
-  return <div>Hello World</div>
+
+
+
+export default function App (){
+
+  return(
+    <div className="App">
+    <Meme />
+    </div>
+  )
 }
